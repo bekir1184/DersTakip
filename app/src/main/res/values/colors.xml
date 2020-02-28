@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFBC5C  </color>
+    <color name="colorPrimaryDark">#FD9600 </color>
+    <color name="colorAccent">#FFBC5C</color>
+
+    <color name="Mor">#432fbf</color>
+
+    <color name="color1">#424549</color>
+    <color name="color2">#7e455e</color>
+    <color name="color3">#796e25</color>
+
+    <color name="cardBack">#EEF5F9</color>
+    <color name="card">#E0E9EE</color>
+    <color name="Gri">#C3C1C0</color>
+
+
+    <color name="turuncuAktif">#FD9600</color>
+    <color name="turucuPasif">#FFBC5C</color>
+
+
+
+</resources>

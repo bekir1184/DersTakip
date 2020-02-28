@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/arkaplan"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".TarihAyarla">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:text="Ders Ekle"
+            android:textStyle="bold"
+            android:textSize="40dp"
+            android:fontFamily="@font/madelina"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="25dp"
+            android:id="@+id/baslik"/>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_below="@+id/baslik"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="40dp"
+            android:layout_margin="20dp"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_margin="20dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1.Dersin tarihini giriniz"
+                    android:textSize="30dp"
+                    android:fontFamily="@font/madelina"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:id="@+id/tarihBaslikText"/>
+
+
+                <LinearLayout
+                    android:id="@+id/linear"
+                    android:layout_margin="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/tarihBaslikText"
+                    android:layout_width="wrap_content"
+                    android:padding="7dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext"
+                    android:orientation="horizontal"
+                    >
+                    <TextView
+                        android:fontFamily="@font/madelina"
+                        android:textColor="@android:color/white"
+                        android:layout_marginLeft="30dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:padding="4dp"
+                        android:text="Dersin olduğu gün"
+                        android:gravity="center"
+                        android:textSize="25sp"
+                        />
+                    <Spinner
+
+                        android:padding="6dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/gunlerSpinner"
+                        />
+
+
+                </LinearLayout>
+
+                <Button
+                    android:fontFamily="@font/madelina"
+                    android:textSize="25dp"
+                    android:id="@+id/baslamaSaatButton"
+                    android:text="Başlangıç saati ekle"
+                    android:layout_width="250dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/linear"
+                    android:background="@drawable/edittext"
+                    android:textAllCaps="false"
+                    android:layout_margin="10dp"
+                    android:textColor="@android:color/white"
+                    android:layout_height="wrap_content"/>
+
+                <Button
+                    android:fontFamily="@font/madelina"
+                    android:textSize="25dp"
+                    android:layout_margin="10dp"
+                    android:id="@+id/bitisSaatButton"
+                    android:text="Bitiş saati ekle"
+                    android:layout_width="250dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/baslamaSaatButton"
+                    android:background="@drawable/edittext"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ileriresim"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="7dp"
+                    android:layout_alignParentRight="true"
+                    />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ileri"
+                    android:id="@+id/dersEkleButton"
+                    android:textAllCaps="false"
+                    android:background="@android:color/transparent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/madelina"
+                    android:textColor="@android:color/black"/>
+
+
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+
+
+
+</FrameLayout>

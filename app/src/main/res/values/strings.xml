@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">DersTakipSistemi</string>
+    <string name="anaStr">Ana Sayfa</string>
+    <string name="progStr">Program</string>
+    <string name="devamStr">Devamsızlık</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="gunler">
+        <item>Pazartesi</item>
+        <item>Sali</item>
+        <item>Carsamba</item>
+        <item>Persembe</item>
+        <item>Cuma</item>
+        <item>Cumartesi</item>
+        <item>Pazar</item>
+    </string-array>
+</resources>
