@@ -36,8 +36,7 @@ public class BilgiGir extends AppCompatActivity {
         girmedimB=(Button)findViewById(R.id.girmedimButton);
         textView=findViewById(R.id.girdinMiBaslik);
 
-        Bundle bundle =getIntent().getExtras();
-        dersAdi=bundle.getString("dersAdi");
+        dersAdi=DersAdi.dersAdi;
 
         textView.setText(dersAdi);
 

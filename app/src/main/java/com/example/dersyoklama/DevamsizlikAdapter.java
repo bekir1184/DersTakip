@@ -66,8 +66,8 @@ public class DevamsizlikAdapter extends RecyclerView.Adapter<DevamsizlikAdapter.
                 dersSil(list.get(position).getDersAdi());
                 programdanSil(list.get(position).getDersAdi());
                 yenile();
-                TarihAyarla tarihAyarla= new TarihAyarla();
-                tarihAyarla.cancelAlarm(activity);
+
+
             }
         });
         holder.ayrıntı.setOnClickListener(new View.OnClickListener() {

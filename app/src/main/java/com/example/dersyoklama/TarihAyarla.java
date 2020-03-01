@@ -90,17 +90,6 @@ public class TarihAyarla extends AppCompatActivity implements AdapterView.OnItem
                     models.add(new DersTarihModel(dersNo,gun,baslamaSaat,baslamaDak,bitisSaat,bitisDak));
                     dersNo++;
 
-                    //Alarm Ayarlama
-                    Calendar calNow = Calendar.getInstance();
-                    Calendar calSet = (Calendar) calNow.clone();
-
-                    calSet.set(Calendar.DAY_OF_WEEK,gunAyarla(gun));
-                    calSet.set(Calendar.HOUR_OF_DAY,bitisSaat);
-                    calSet.set(Calendar.MINUTE, bitisDak+5);
-                    calSet.set(Calendar.SECOND, 0);
-                    calSet.set(Calendar.MILLISECOND, 0);
-
-                    startAlarm(calSet,DersEkle.getDersAdi());
 
                     Intent intent = new Intent(TarihAyarla.this, TarihAyarla.class);
                     startActivity(intent);
@@ -109,19 +98,6 @@ public class TarihAyarla extends AppCompatActivity implements AdapterView.OnItem
                 else{
                     models.add(new DersTarihModel(dersNo,gun,baslamaSaat,baslamaDak,bitisSaat,bitisDak));
                     Ders ders = new Ders(DersEkle.getDersAdi(),DersEkle.getDersDevamHak(),models);
-
-                    //Alarm Ayarlama
-                    Calendar calNow = Calendar.getInstance();
-                    Calendar calSet = (Calendar) calNow.clone();
-
-                    calSet.set(Calendar.DAY_OF_WEEK,gunAyarla(gun));
-                    calSet.set(Calendar.HOUR_OF_DAY,bitisSaat);
-                    calSet.set(Calendar.MINUTE, bitisDak);
-                    calSet.set(Calendar.SECOND, 0);
-                    calSet.set(Calendar.MILLISECOND, 0);
-
-
-                    startAlarm(calSet,DersEkle.getDersAdi());
 
 
                     //Dosyaya yazma
@@ -199,6 +175,34 @@ public class TarihAyarla extends AppCompatActivity implements AdapterView.OnItem
                             fileOutputStream.write("/".getBytes());
 
                             System.out.println(model.bitisDakika+"-->Dersler");
+
+                            String donbasdak;
+                            String donbassaat;
+
+                            if(model.bitisDakika<10){
+                                donbasdak="0"+model.bitisDakika;
+
+                            }
+                            else{
+                                donbasdak=model.bitisDakika+"";
+
+                            }
+                            if(model.baslamaSaat<10){
+                                donbassaat="0"+model.bitisSaat;
+
+                            }
+                            else{
+                                donbassaat=model.bitisSaat+"";
+
+                            }
+
+
+                            ayridersOS.write(donbassaat.getBytes());
+                            ayridersOS.write("/".getBytes());
+
+
+                            ayridersOS.write(donbasdak.getBytes());
+                            ayridersOS.write("/".getBytes());
 
                             ayridersOS.write("\n".getBytes());
                             System.out.println("----------------------");
@@ -280,26 +284,7 @@ public class TarihAyarla extends AppCompatActivity implements AdapterView.OnItem
 
 
     }
-    private void startAlarm(Calendar c,String dersAdi) {
 
-        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        Intent intent = new Intent(this, Alarm.class);
-        intent.putExtra("dersAdi",dersAdi);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,c.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);
-
-    }
-    public static void cancelAlarm(Activity activity) {
-        AlarmManager alarmManager = (AlarmManager) activity.getSystemService(Context.ALARM_SERVICE);
-        Intent intent = new Intent(activity, Alarm.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(activity, 1, intent, 0);
-
-
-
-        alarmManager.cancel(pendingIntent);
-
-    }
 
 
 }
