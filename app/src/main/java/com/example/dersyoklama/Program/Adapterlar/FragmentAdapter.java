@@ -5,10 +5,8 @@ import android.content.Context;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import com.example.dersyoklama.Program.Fragmentlar.Pazar;
 import com.example.dersyoklama.Program.Fragmentlar.Carsamba;
 import com.example.dersyoklama.Program.Fragmentlar.Cuma;
 import com.example.dersyoklama.Program.Fragmentlar.Cumartesi;
@@ -17,7 +15,7 @@ import com.example.dersyoklama.Program.Fragmentlar.Persembe;
 import com.example.dersyoklama.Program.Fragmentlar.Sali;
 
 public class FragmentAdapter extends FragmentStatePagerAdapter {
-    private String [] tabTitle ={"Pazartesi","Sali","Çarşamba","Perşembe","Cuma","Cumartesi","Pazar"};
+    private String [] tabTitle ={"Pazartesi","Sali","Çarşamba","Perşembe","Cuma","Cumartesi"};
     Context context;
 
 
@@ -51,9 +49,7 @@ public class FragmentAdapter extends FragmentStatePagerAdapter {
             case 5 :
 
                 return  new Cumartesi();
-            case 6 :
 
-                return  new Pazar();
 
             default:
 

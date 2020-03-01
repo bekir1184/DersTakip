@@ -21,10 +21,7 @@ import java.util.List;
 
 public class AnaSayfa extends Fragment {
     private View rootView;
-    private ViewPager viewPager;
-    private int sayfa=0;
-    private ViewPagerAdepter pagerAdepter;
-    List<pagerModel> liste;
+
 
 
 
@@ -34,44 +31,7 @@ public class AnaSayfa extends Fragment {
 
         rootView= inflater.inflate(R.layout.fragment_ana_sayfa, container, false);
 
-        List<String>deneme=new ArrayList<>();
-        deneme.add("Matemetik");
-        deneme.add("Matemetik");
-        deneme.add("Matemetik");
 
-        liste= new ArrayList<>();
-        liste.add(new pagerModel("Yaklaşan Dersler",  deneme));
-        liste.add(new pagerModel("Yaklaşan Sınavlar",deneme));
-        liste.add(new pagerModel("Devamsizlik Durumu",deneme));
-        viewPager=rootView.findViewById(R.id.viewPagerAnaSayfa);
-
-
-
-        pagerAdepter= new ViewPagerAdepter(liste,getContext());
-
-        viewPager.setAdapter(pagerAdepter);
-        viewPager.setPadding(50,0,50,0);
-
-
-
-        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-            @Override
-            public void onPageSelected(final int position) {
-                sayfa=position;
-
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-
-        });
 
         FloatingActionButton floatingActionButton = rootView.findViewById(R.id.dersEkleFloat);
 
@@ -91,6 +51,7 @@ public class AnaSayfa extends Fragment {
             }
         });
 
+        setFragment2(new DersYok());
 
         return rootView;
 
@@ -100,6 +61,12 @@ public class AnaSayfa extends Fragment {
         fragmentTransaction.replace(R.id.frameLay,fragment);
         fragmentTransaction.commit();
     }
+    public void setFragment2 (Fragment fragment){
+        FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.FrameTutucu,fragment);
+        fragmentTransaction.commit();
+    }
+
 
 
 

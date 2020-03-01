@@ -10,14 +10,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class YaklasanDersler extends Fragment {
 
+
+public class DersYok extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_yaklasan_dersler, container, false);
+        return inflater.inflate(R.layout.fragment_ders_yok, container, false);
     }
 
 
